@@ -1,0 +1,37 @@
+[local]
+host        = "0.0.0.0"
+port        = 6667
+server_name = "archaeon"
+motd        = "Archaeon – messages are bridged between IRC-LoRa."
+# password  = ""
+
+[upstream]
+enabled     = true
+max_retries = 0
+
+[irc]
+server   = "irc.libera.chat"
+port     = 6697
+nick     = "LoRa"
+tls      = true
+# password      = ""
+# sasl_username = ""
+# sasl_password = ""
+
+[serial]
+enabled = true
+device = "/dev/ttyACM0"
+baud   = 115200
+
+[tuning]
+collision_avoidance_ms = 1000
+send_delay_ms          = 3000
+send_jitter_ms         = 500
+send_retries           = 10
+
+[encryption]
+key = "" # 64-char hex string or "@/path/to/keyfile"
+
+[mesh]
+# node_id   = "" # auto-generated if omitted
+# ttl       = 7
